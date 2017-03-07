@@ -1,0 +1,28 @@
+From 7cfca2f001d298f22e3df108e6b5eb0e50fc34dd Mon Sep 17 00:00:00 2001
+From: Mike Thompson <mpthompson@gmail.com>
+Date: Mon, 6 Mar 2017 23:05:41 -0800
+Subject: [PATCH] Removed lib and include from prefix.
+
+---
+ Imaging-1.1.7/setup.py | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git Imaging-1.1.7/setup.py Imaging-1.1.7/setup.py
+index f3460e6..8920ff1 100644
+--- Imaging-1.1.7/setup.py
++++ Imaging-1.1.7/setup.py
+@@ -155,11 +155,6 @@ class pil_build_ext(build_ext):
+ 
+         # FIXME: check /opt/stuff directories here?
+ 
+-        prefix = sysconfig.get_config_var("prefix")
+-        if prefix:
+-            add_directory(library_dirs, os.path.join(prefix, "lib"))
+-            add_directory(include_dirs, os.path.join(prefix, "include"))
+-
+         #
+         # locate tkinter libraries
+ 
+-- 
+2.7.4
+
