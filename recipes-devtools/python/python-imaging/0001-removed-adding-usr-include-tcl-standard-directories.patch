@@ -1,0 +1,29 @@
+From f895021552fc0ab6b049f637078f9e69efe83436 Mon Sep 17 00:00:00 2001
+From: Mike Thompson <mpthompson@gmail.com>
+Date: Mon, 6 Mar 2017 21:42:42 -0800
+Subject: [PATCH] Removed adding /usr/include/tcl standard directories.
+
+---
+ Imaging-1.1.7/setup.py | 6 ------
+ 1 file changed, 6 deletions(-)
+
+diff --git Imaging-1.1.7/setup.py Imaging-1.1.7/setup.py
+index dd93747..8920ff1 100644
+--- Imaging-1.1.7/setup.py
++++ Imaging-1.1.7/setup.py
+@@ -201,12 +201,6 @@ class pil_build_ext(build_ext):
+         #
+         # add standard directories
+ 
+-        # look for tcl specific subdirectory (e.g debian)
+-        if _tkinter:
+-            tcl_dir = "/usr/include/tcl" + TCL_VERSION
+-            if os.path.isfile(os.path.join(tcl_dir, "tk.h")):
+-                add_directory(include_dirs, tcl_dir)
+-
+         #
+         # insert new dirs *before* default libs, to avoid conflicts
+         # between Python PYD stub libs and real libraries
+-- 
+2.7.4
+
