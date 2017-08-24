@@ -22,6 +22,7 @@ RDEPENDS_${PN} = "\
     ${PYTHON_PN}-rospkg \
     rosgraph \
     ${PYTHON_PN}-pyyaml \
+    ${PYTHON_PN}-defusedxml \
     roslib \
     rosclean \
     rosmaster \
