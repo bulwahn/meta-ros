@@ -9,6 +9,4 @@ SRC_URI = "http://pypi.python.org/packages/source/p/pyproj/pyproj-${PV}.tar.gz"
 SRC_URI[md5sum] = "027345e3c033fa400e0e64a1c80d34c9"
 SRC_URI[sha256sum] = "53fa54c8fa8a1dfcd6af4bf09ce1aae5d4d949da63b90570ac5ec849efaf3ea8"
 
-RDEPENDS_${PN} = "proj"
-
 S = "${WORKDIR}/${SRCNAME}-${PV}"
