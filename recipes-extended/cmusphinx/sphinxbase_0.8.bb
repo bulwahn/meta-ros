@@ -5,8 +5,8 @@ acoustic feature and audio files."
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://COPYING;md5=c550e8ca1106e5eeaf4e2b4cbf960fcf"
 
-SRC_URI[md5sum] = "7335d233f7ad4ecc4b508aec7b5dc101"
-SRC_URI[sha256sum] = "55708944872bab1015b8ae07b379bf463764f469163a8fd114cbb16c5e486ca8"
+SRC_URI[md5sum] = "cb530d737c8f2d1023797cf0587b4e05"
+SRC_URI[sha256sum] = "7a07d3f7cca5c0b38ca811984ef8da536da32932d68c1a6cce33ec2462b930bf"
 
 require cmusphinx.inc
 
