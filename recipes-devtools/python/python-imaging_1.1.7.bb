@@ -22,6 +22,10 @@ PACKAGECONFIG[lcms] = ",,lcms"
 
 inherit distutils
 
+do_configure_prepend() {
+	sed -i -e s:/usr/include/tcl:${STAGING_DIR_HOST}/usr/include/tcl:g ${S}/setup.py
+}
+
 do_compile() {
     export STAGING_LIBDIR=${STAGING_LIBDIR}
     export STAGING_INCDIR=${STAGING_INCDIR}
