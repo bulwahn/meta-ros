@@ -65,16 +65,23 @@ def print_header():
     print("\033[1m\033[4m" + "package".ljust(35) +
           "layer".ljust(13) + "distro".ljust(10) + '\033[0m')
 
+def print_help():
+    print("Usage:")
+    print("List all versions:                  ./check_versions.py list")
+    print("List all versions that don't match: ./check_versions.py mismatch")
+
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
-        dist_raw = yaml.load(urllib.request.urlopen(DIST_FILE).read())
-        packages = [x for x in os.listdir(BASE_DIR) if x not in EXCLUDE]
-        print_header()
-        for package in packages:
-            check_version(package)
+        print_help()
     else:
-        if sys.argv[1] == "mismatch":
+        if sys.argv[1] == "list":
+            dist_raw = yaml.load(urllib.request.urlopen(DIST_FILE).read())
+            packages = [x for x in os.listdir(BASE_DIR) if x not in EXCLUDE]
+            print_header()
+            for package in packages:
+                check_version(package)
+        elif sys.argv[1] == "mismatch":
             dist_raw = yaml.load(urllib.request.urlopen(DIST_FILE).read())
             packages = [x for x in os.listdir(BASE_DIR) if x not in EXCLUDE]
             print_header()
@@ -82,6 +89,4 @@ if __name__ == "__main__":
                 if not check_version(package, silent=True)[0]:
                     match, version, dist_ver = check_version(package)
         else:
-            print("Usage:")
-            print("List all versions:                  ./check_versions.py")
-            print("List all versions that don't match: ./check_versions.py mismatch")
+            print_help()
