@@ -29,7 +29,7 @@ import yaml
 BASE_DIR = "../recipes-ros"
 DEBUG = True
 EXCLUDE = ["packagegroups"]
-DISTRO = "indigo"
+DISTRO = "kinetic"
 DIST_FILE = "https://raw.githubusercontent.com/ros/rosdistro/master/" + DISTRO+ "/distribution.yaml"
 dist_raw = None
 
